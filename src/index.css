@@ -1,0 +1,89 @@
+@import 'leaflet/dist/leaflet.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --accent: 22 163 74;
+  --accent-strong: 21 128 61;
+  --accent-soft: 240 253 244;
+}
+
+[data-role='driver'] {
+  --accent: 202 138 4;
+  --accent-strong: 161 98 7;
+  --accent-soft: 255 251 235;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-slate-100 font-sans text-slate-800 antialiased;
+    -webkit-tap-highlight-color: transparent;
+    overscroll-behavior: none;
+  }
+}
+
+@layer components {
+  .safe-bottom {
+    padding-bottom: calc(env(safe-area-inset-bottom) + 0.5rem);
+  }
+
+  .sheet-handle {
+    @apply mx-auto h-1.5 w-10 rounded-full bg-slate-300;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl bg-accent px-4 py-3 text-sm font-semibold text-white shadow-sm transition active:scale-[0.98] disabled:opacity-50;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl bg-slate-100 px-4 py-3 text-sm font-semibold text-slate-600 transition active:scale-[0.98] disabled:opacity-50;
+  }
+}
+
+.leaflet-container {
+  font: inherit;
+  background: #e2e8f0;
+}
+
+.leaflet-routing-container {
+  display: none !important;
+}
+
+.leaflet-bar,
+.leaflet-control-layers {
+  border-radius: 0.75rem !important;
+  overflow: hidden;
+  box-shadow: 0 6px 18px -8px rgba(15, 23, 42, 0.4) !important;
+  border: none !important;
+}
+
+.leaflet-control-layers {
+  margin-top: 8.5rem !important;
+  margin-right: 0.75rem !important;
+}
+
+.leaflet-bottom.leaflet-right {
+  bottom: 5.25rem;
+}
+
+.leaflet-control-zoom {
+  margin-bottom: 0 !important;
+}
+
+.leaflet-control-attribution {
+  font-size: 10px;
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.bin-marker {
+  background: transparent;
+  border: none;
+}
